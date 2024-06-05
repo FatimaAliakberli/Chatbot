@@ -11,8 +11,11 @@ def main():
 
  
 
-  with st.sidebar:
-    user_input = st.text_input("Your message: ", key = "user_input")
+  #with st.sidebar:
+  #  user_input = st.text_input("Your message: ", key = "user_input")
+
+  message("Hello, how are you?")
+  message("Hi, I am fine", is_user = True)
   
 
 
