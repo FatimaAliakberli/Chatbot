@@ -7,7 +7,7 @@ def main():
     page_icon = "💬"
   )
 
-  st.header("Welcome to your Personal Chatbot 🤖")
+  st.header("Welcome to your Chatbot 🤖")
 
  
 
