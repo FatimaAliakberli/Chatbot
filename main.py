@@ -2,7 +2,7 @@ import streamlit as st
 
 def main():
   st.set_page_config(
-    page_title = "Personal Chatbot"
+    page_title = "Personal Chatbot",
     page_icon = "💬"
   )
 
