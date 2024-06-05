@@ -1,7 +1,18 @@
 import streamlit as st
 from streamlit_chat import message
+from dotenv import load_dotenv
+
 
 def main():
+  load_dotenv()
+
+  if os.getenv("OPEN_API_KEY") is None or os.getenv("OPEN_API_KEY") == "":
+    print("OPEN_API_KEY is not set")
+    exit(1)
+  else:
+    print('OPEN_API_KEY is set')
+
+
   st.set_page_config(
     page_title = "Personal Chatbot",
     page_icon = "💬"
