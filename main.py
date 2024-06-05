@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_chat import message
 
 def main():
   st.set_page_config(
