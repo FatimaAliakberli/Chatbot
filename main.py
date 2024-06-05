@@ -15,7 +15,7 @@ def main():
     user_input = st.text_input("Your message: ", key = "user_input")
 
   message("Hello, how are you?")
-  message("Hi, I am fine", is_user = True)
+  message("Hi, I am fine", is_user = False)
   
 
 
