@@ -3,7 +3,14 @@ from streamlit_chat import message
 from dotenv import load_dotenv
 import os
 
-def main():
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import (
+  SystemMessage, 
+  HumanMessage, 
+  AIMessage
+)
+
+def init():
   load_dotenv()
 
   if os.getenv("OPEN_API_KEY") is None or os.getenv("OPEN_API_KEY") == "":
@@ -11,6 +18,17 @@ def main():
     exit(1)
   else:
     print('OPEN_API_KEY is set')
+
+
+
+def main():
+  init()
+
+  chat = ChatOpenAI(temprature = 0)
+
+  messages = [
+    SystemMessage(content = "You are a helpful assistant.")
+  ]
 
 
   st.set_page_config(
@@ -25,8 +43,11 @@ def main():
   with st.sidebar:
     user_input = st.text_input("Your message: ", key = "user_input")
 
-  message("Hello, how are you?")
-  message("Hi, I am fine", is_user = True)
+  if user_input:
+    message(user_input, is_user = True)
+    messages.append(HumanMessage(content = user_input))
+    response = chat(messages)
+    message(user_input, is_user = False)
   
 
 
