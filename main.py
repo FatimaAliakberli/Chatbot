@@ -26,7 +26,7 @@ def init():
 
     # setup streamlit page
     st.set_page_config(
-        page_title="Your own ChatGPT",
+        page_title="Personal Advisor",
         page_icon="🤖"
     )
 
