@@ -26,9 +26,10 @@ def main():
 
   chat = ChatOpenAI(temprature = 0)
 
-  messages = [
-    SystemMessage(content = "You are a helpful assistant.")
-  ]
+  if "messages" not in st.session_state:
+    st.session_state.messages = [
+      SystemMessage(content = "You are a helpful assistant.")
+    ]
 
 
   st.set_page_config(
@@ -45,8 +46,9 @@ def main():
 
   if user_input:
     message(user_input, is_user = True)
-    messages.append(HumanMessage(content = user_input))
-    response = chat(messages)
+    st.session_state.messages.append(HumanMessage(content = user_input))
+    with st.spinner("Hmm..."):
+      response = chat(st.sesssion_state.messages)
     message(user_input, is_user = False)
   
 
