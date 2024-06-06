@@ -42,7 +42,7 @@ def main():
             SystemMessage(content="You are a helpful assistant.")
         ]
 
-    st.header("Your own ChatGPT 🤖")
+    st.header("Personal Advisor 🤖")
 
     # sidebar with user input
     with st.sidebar:
